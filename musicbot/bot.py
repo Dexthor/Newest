@@ -744,7 +744,7 @@ class MusicBot(discord.Client):
                 return Response("No such command", delete_after=10)
 
         else:
-            helpmsg = "**Commands**\n```"
+            helpmsg = "**Commands**\n```md\n"
             commands = []
 
             for att in dir(self):
@@ -752,11 +752,44 @@ class MusicBot(discord.Client):
                     command_name = att.replace('cmd_', '').lower()
                     commands.append("{}{}".format(self.config.command_prefix, command_name))
 
-            helpmsg += ", ".join(commands)
-            helpmsg += "```"
-            helpmsg += "https://github.com/SexualRhinoceros/MusicBot/wiki/Commands-list"
+            helpmsg += "\n\
+    Note- \n\
+    1. If the audio stops use the *disconnect command and summon it back. \n\
+    2. Praise be to iMayHaveBorkedIt ;) \n\
+    3. Pm dex if errors. \n\
+#Commands for the bot are:- \n\
+[ mrestart ]( Incase bot misbehaves. :p ) \n\
+\n\
+[ msummon ]( summons the bot into voice chat. Dont use this to move the bot. ) \n\
+\n\
+[ mplay song/Link/PlaylistLink ]( takes YT,SoundCloud links and playlists. ) \n\
+\n\
+[ mpause ]( Pauses the bot. ) \n\
+\n\
+[ mresume ]( Resumes the bot duh. ) \n\
+\n\
+[ msearch songname ]( Use this incase your not sure of the song name. ) \n\
+\n\
+[ msearch 1-10 songname ]( Searches for top 1 to 10 YT results. ) \n\
+\n\
+[ mqueue ]( Shows the songs in queue. ) \n\
+\n\
+[ mnp ]( Now playing. ) \n\
+\n\
+[ mshuffle ]( To shuffle the songlist. ) \n\
+\n\
+[ mskip ]( Skips the song. Please let everyone have a chance, dont overskip. ) \n\
+\n\
+[ mvolume ]( To check the volume. ) \n\
+\n\
+[ mvolume 1-100 ]( changes the volume, change your own damn volume. ) \n\
+\n\
+[ mclear ]( Admins only, Clears playlist, only when troll songs requested. ) \n\
+\n\
+[ mblacklist add @UserName]( If someone is trolling much, only MusicMasters. )\n\
+```"
 
-            return Response(helpmsg, reply=True, delete_after=60)
+            return Response(helpmsg, reply=True)
 
     async def cmd_blacklist(self, message, user_mentions, option, something):
         """
