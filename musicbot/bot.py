@@ -756,7 +756,6 @@ class MusicBot(discord.Client):
     Note- \n\
     1. If the audio stops use the *disconnect command and summon it back. \n\
     2. Praise be to iMayHaveBorkedIt ;) \n\
-    3. Pm dex if errors. \n\
 #Commands for the bot are:- \n\
 [ mrestart ]( Incase bot misbehaves. :p ) \n\
 \n\
